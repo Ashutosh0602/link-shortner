@@ -7,20 +7,23 @@ connection.on("error", () => console.log("Error"));
 
 const url = require("./model/schema");
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3003;
 
 const body = require("body-parser");
 app.use(body.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  console.log("hashedoiw");
+  console.log("yes");
 });
-app.post("/", (req, res) => {
-  console.log("Hello world dude 😀😀🤣🥲");
-  console.log(req.body);
-  res.redirect("/");
+app.get("/:code", require("./routes/redirect"));
+// app.get("/:code", (req, res) => {
+//   console.log(req.params);
+// });
+app.post(
+  "/link",
+  require("./routes/url")
   //   res.json({ main: "nice" });
-});
+);
 // app.get("/get", (req, res) => {
 //   console.log("hello get");
 //   res.redirect("/");

@@ -108,3 +108,6 @@ button {
   border-radius: 0rem 1rem 1rem 0rem;
   background-color: #002bdc;
 }
+button:hover {
+  cursor: pointer;
+}
